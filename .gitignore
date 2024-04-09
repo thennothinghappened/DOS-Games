@@ -1,1 +1,4 @@
 **/*.com
+**/*.bin
+stdout.txt
+stderr.txt
