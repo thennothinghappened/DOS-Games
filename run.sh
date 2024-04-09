@@ -108,12 +108,23 @@ clean_output_files() {
     local com_files=(./*.COM)
     local bin_files=(./*.bin)
 
+    local dosbox_stdout='./stdout.txt'
+    local dosbox_stderr='./stderr.txt'
+
     if [ ${#com_files} -ne 0 ]; then
         rm "${com_files[@]}"
     fi
 
     if [ ${#bin_files} -ne 0 ]; then
         rm "${bin_files[@]}"
+    fi
+
+    if [ -f "$dosbox_stdout" ]; then
+        rm "$dosbox_stdout"
+    fi
+
+    if [ -f "$dosbox_stderr" ]; then
+        rm "$dosbox_stderr"
     fi
 
 }
